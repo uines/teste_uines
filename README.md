@@ -25,7 +25,7 @@ for($i=1; $i <= 100; $i++){
 ### Instalação
 * Para executar a solução acesse http://SEU_DOMINIO/TESTE_UINES/questao1/questao1.php
 
-## Questão 2 - Pasta "questao-2"
+## Questão 2
 * Refatore o código abaixo, fazendo as alterações que julgar necessário.
 ```
 <?php
@@ -39,14 +39,24 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 ```
 
 ### Solução: 
-* Foi mantida a diferença de caso das variavies "Loggedin" e "loggedin" para compatibilidade com a aplicação.
-* Verifico se há cookie ou sessão configurada com usuário logado
-* Parece ser proposital a diferença case_sensitive entre loggedin e Loggedin, por isso não refatorei, pois a aplicação pode estar armazenando das 2 maneiras
-
+```
+<?php
+//Função para redirecionar para o google.com
+function Redirecionar()
+{
+    //Direcionando para google.com
+    header("Location: http://www.google.com");
+}
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    Redirecionar();
+} elseif (isset($_COOKIE['Loggedin']) && $_COOKIE['Loggedin'] == true) {
+    Redirecionar();
+}
+```
 ### Instalação
-* O código é apenas parcial. O mesmo deve ser aberto em um editor de texto e avaliado.
+* Para executar a solução acesse http://SEU_DOMINIO/teste_uines/questao2/questao2.php
 
-## Questão 3 - Pasta "questao-3"
+## Questão 3
 * Refatore o código abaixo, fazendo as alterações que julgar necessário.
 ```
 <?php
@@ -61,15 +71,23 @@ class MyUserClass {
 ```
 
 ### Solução: 
-* Nesse script getListaUsuario, tem a função de retornar uma lista de usuários em ordem alfabética.
-* No código passado no exercício, para o funcionamento do método é instanciado um objeto para conexão com o banco de dados toda vez que o método for chamado.
-* Com as alterações é possível utilizar o método sem a necessidade de criar um novo objeto. 
-* Além de permitir utilizar o mesmo método em diferentes conexões com o banco de dados.
+* Nesse script getListaUsuario, criei uma classe no arquivo bd.php onde o mesmo instancia a conexão com o banco de dados.
+* No código passado no exercício, chamo classe de conexão para executar a consulta sql
+
 
 ### Instalação
-* O código é apenas parcial. O mesmo deve ser aberto em um editor de texto e avaliado.
+* Alterar as variaveis de conexão com banco no arquivo questao3/bd.php
+* Criar um banco de dados e adicionar a tabela com o comando:
+```
+CREATE TABLE user  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NULL,
+  PRIMARY KEY (`id`)
+);
+```
+* Para executar a solução acesse http://SEU_DOMINIO/teste_uines/questao3/questao3.php
 
-## Questão 4 - Pasta "questao-4"
+## Questão 4
 * Desenvolva uma API Rest para um sistema gerenciador de tarefas (inclusão/alteração/exclusão). As tarefas consistem em título e descrição, ordenadas por prioridade.
 
 Desenvolver utilizando:
