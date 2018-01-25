@@ -76,7 +76,6 @@ class MyUserClass {
 
 
 ### Instalação
-* Alterar as variaveis de conexão com banco no arquivo questao3/bd.php
 * Criar um banco de dados e adicionar a tabela com o comando:
 ```
 CREATE TABLE user  (
@@ -85,6 +84,7 @@ CREATE TABLE user  (
   PRIMARY KEY (`id`)
 );
 ```
+* Alterar as variaveis de conexão com banco no arquivo questao3/bd.php
 * Para executar a solução acesse http://SEU_DOMINIO/teste_uines/questao3/questao3.php
 
 ## Questão 4
