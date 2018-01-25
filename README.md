@@ -83,6 +83,11 @@ CREATE TABLE user  (
   `name` varchar(255) NULL,
   PRIMARY KEY (`id`)
 );
+
+INSERT INTO `user` VALUES (1, 'Nome 1');
+INSERT INTO `user` VALUES (2, 'Nome 2');
+INSERT INTO `user` VALUES (3, 'Nome 3');
+INSERT INTO `user` VALUES (4, 'Nome 4');
 ```
 * Alterar as variaveis de conexão com banco no arquivo questao3/bd.php
 * Para executar a solução acesse http://SEU_DOMINIO/teste_uines/questao3/questao3.php

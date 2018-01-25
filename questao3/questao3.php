@@ -13,4 +13,4 @@ class MyUserClass
 
 //Testar script
 $user = new MyUserClass;
-print_r($user->getUserList());
+echo implode(', ',$user->getUserList());
