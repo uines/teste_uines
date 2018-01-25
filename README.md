@@ -71,8 +71,8 @@ class MyUserClass {
 ```
 
 ### Solução: 
-* Nesse script getListaUsuario, criei uma classe no arquivo bd.php onde o mesmo instancia a conexão com o banco de dados.
-* No código passado no exercício, chamo classe de conexão para executar a consulta sql
+* Nesse script getListaUsuario, criei uma classe no arquivo questao3/bd.php onde o mesmo instancia a conexão com o banco de dados.
+* No código passado no exercício, chama-se a classe de conexão para executar a consulta sql
 
 
 ### Instalação
